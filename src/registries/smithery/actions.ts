@@ -5,7 +5,7 @@ import { config } from "dotenv";
 config();
 
 const BASE_URL = "https://registry.smithery.ai";
-const API_KEY = "b066c4b6-fd1d-4af0-85f7-d1b34b99a13e";
+const API_KEY = process.env.SMITHERY_API_KEY;
 
 if (!API_KEY) {
   throw new Error("SMITHERY_API_KEY environment variable is not set");
