@@ -1,5 +1,7 @@
-Currently supports only Cursor mcp host. 
+# MCP Host Installation
 
-**Roadmap**
+Currently supports only Cursor mcp host.
 
-Will support claude desktop, cline. 
+## Roadmap
+
+Will support claude desktop, cline.

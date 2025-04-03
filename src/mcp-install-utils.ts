@@ -1,15 +1,8 @@
-import { homedir } from "os";
-import { join } from "path";
 import { readFileSync, writeFileSync } from "fs";
+import clientPaths from "./client-paths";
 
-// Get the platform-independent path to mcp.json
-const getMcpConfigPath = () => {
-  return join(homedir(), ".cursor", "mcp.json");
-};
-
-// Read and parse mcp.json
 const readMcpConfig = () => {
-  const configPath = getMcpConfigPath();
+  const configPath = clientPaths.cursor;
   try {
     const configContent = readFileSync(configPath, "utf-8");
     return JSON.parse(configContent);
@@ -20,9 +13,8 @@ const readMcpConfig = () => {
   }
 };
 
-// Write to mcp.json
 const writeMcpConfig = (config: any) => {
-  const configPath = getMcpConfigPath();
+  const configPath = clientPaths.cursor;
   const existingConfig = readMcpConfig();
 
   const mcpServers = existingConfig.mcpServers;
